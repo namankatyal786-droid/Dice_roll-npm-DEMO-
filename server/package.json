@@ -1,0 +1,14 @@
+{
+  "name": "naman-dice-server",
+  "version": "1.0.0",
+  "description": "Express backend for naman-dice demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "naman-dice": "^1.0.0"
+  }
+}

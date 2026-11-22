@@ -1,0 +1,207 @@
+.app-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  border: 1px solid #edf2f7;
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #718096;
+}
+
+.package-link {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px dotted #818cf8;
+  transition: color 0.15s ease;
+}
+
+.package-link:hover {
+  color: #3730a3;
+}
+
+.dice-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+/* Big Dice Face */
+.dice-face {
+  width: 140px;
+  height: 140px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow:
+    0 12px 24px -4px rgba(0, 0, 0, 0.18),
+    0 4px 6px -2px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 16px;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+.dice-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dice-dot {
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 35% 35%, #4a5568, #1a202c);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-2px, -3px) rotate(-6deg); }
+  20% { transform: translate(-4px, 0px) rotate(5deg); }
+  30% { transform: translate(4px, 3px) rotate(0deg); }
+  40% { transform: translate(2px, -2px) rotate(4deg); }
+  50% { transform: translate(-2px, 3px) rotate(-5deg); }
+  60% { transform: translate(-4px, 2px) rotate(1deg); }
+  70% { transform: translate(4px, 2px) rotate(-4deg); }
+  80% { transform: translate(-2px, -2px) rotate(3deg); }
+  90% { transform: translate(2px, 3px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-2deg); }
+}
+
+.shaking {
+  animation: shake 0.4s infinite ease-in-out;
+}
+
+.current-number {
+  margin-top: 16px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #4a5568;
+  min-height: 28px;
+}
+
+.actions {
+  margin-bottom: 24px;
+}
+
+.roll-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+  transition: all 0.2s ease;
+}
+
+.roll-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.45);
+}
+
+.roll-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+.roll-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-banner {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-section {
+  border-top: 1px solid #edf2f7;
+  padding-top: 20px;
+}
+
+.history-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.history-empty {
+  font-size: 0.9rem;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+.history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.history-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 1px solid #e2e8f0;
+}
+
+.badge-latest {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  border-color: #c7d2fe;
+  transform: scale(1.05);
+}
